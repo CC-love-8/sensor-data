@@ -73,7 +73,7 @@
             const token = "zNCFBPPJzHGz4mTAXe0W9GPf-yjyJndooj0Tfg8AqX23Jz3SSf2lnuDEiC3WMboTYXtT-DEVR9_IfYAs6kp6ig==";
             const query = `
                 from(bucket: "${bucket}")
-                |> range(start: -10h)
+                |> range(start: -24h)
                 |> filter(fn: (r) => r["_measurement"] == "sensor value")
                 |> pivot(rowKey:["_time"], columnKey: ["_field"], valueColumn: "_value")
                 |> keep(columns: ["_time", "Nora/DHT/Humidity", "Nora/DHT/Temp", "Nora/lightintensity", "Nora/moisture"])
